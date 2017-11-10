@@ -41,6 +41,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     //azure-sdk
+    //采用compileonly解决和bmob-sdk内部依赖冲突问题
     compileOnly 'com.google.code.gson:gson:2.3'
     compileOnly 'com.google.guava:guava:18.0'
     compileOnly 'com.squareup.okhttp:okhttp:2.5.0'
