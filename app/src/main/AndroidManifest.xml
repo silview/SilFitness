@@ -19,13 +19,12 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name=".BmobApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +32,74 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".bmob.crud.CRUDActivity" />
+        <activity android:name=".bmob.crud.QueryActivity" />
+        <activity android:name=".bmob.crud.QueryStatisticActivity" />
+        <activity android:name=".bmob.crud.QuerySQLActivity" />
+        <activity android:name=".bmob.user.UserActivity" />
+        <activity android:name=".BatchActionActivity" />
+        <activity android:name=".bmob.location.LocationActivity" />
+        <activity android:name=".bmob.acl.ACLActivity" />
+        <activity
+            android:name=".bmob.relation.WeiboListActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".bmob.relation.CommentListActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity android:name=".push.ActBmobPush" />
+        <activity android:name=".bmob.file.BmobFileActivity" />
+        <activity android:name=".bmob.autoupdate.ActAutoUpdate" />
+
+        <activity android:name=".bmob.sms.SMSCodeActivity" />
+
+        <!-- bmob push start -->
+        <service
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":bmobpush" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="cn.bmob.push.lib.service.PushNotifyService"
+            android:process=":bmobpush" >
+        </service>
+        <receiver
+            android:name="cn.bmob.push.PushNotifyReceiver" android:process=":bmobpush" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.action.HEARTBEAT" />
+                <action android:name="cn.bmob.push.action.NOTIFY" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.bmob.push.PushReceiver" android:process=":bmobpush">
+            <intent-filter>
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 监听网络变化 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".push.MyMessageReceiver" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.action.MESSAGE" />
+            </intent-filter>
+        </receiver>
+        <!-- bmob push end -->
+
+        <!-- Auto Update Start -->
+        <!-- 设置更新渠道，如果没有，则不要添加此行 -->
+        <meta-data android:name="BMOB_CHANNEL" android:value="bmob"/>
+        <activity
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- Auto Update End -->
     </application>
 
 </manifest>
