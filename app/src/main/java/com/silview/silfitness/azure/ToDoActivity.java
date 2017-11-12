@@ -319,7 +319,7 @@ public class ToDoActivity extends Activity {
         return mToDoTable.read(query).get();
     }*/
 
-    /**
+    /*
      * Initialize local storage
      * @return
      * @throws MobileServiceLocalStoreException
@@ -363,7 +363,7 @@ public class ToDoActivity extends Activity {
     }
 
     //Offline Sync
-    /**
+    /*
      * Sync the current context and the Mobile Service Sync Table
      * @return
      */
@@ -436,7 +436,7 @@ public class ToDoActivity extends Activity {
         builder.create().show();
     }
 
-    /**
+    /*
      * Run an ASync task on the corresponding executor
      * @param task
      * @return

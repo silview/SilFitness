@@ -30,6 +30,7 @@
         <item>14. SQL语句查询</item>
         <item>15. 短信服务</item>
         <item>16. 表结构</item>
+        <item>16. Azure Todo</item>
     </string-array>
 
     <string-array name="bmob_crud_list">

@@ -51,8 +51,9 @@
         <activity android:name=".push.ActBmobPush" />
         <activity android:name=".bmob.file.BmobFileActivity" />
         <activity android:name=".bmob.autoupdate.ActAutoUpdate" />
-
         <activity android:name=".bmob.sms.SMSCodeActivity" />
+
+       <!--<activity android:name=".MainActivity" />-->
 
         <!-- bmob push start -->
         <service

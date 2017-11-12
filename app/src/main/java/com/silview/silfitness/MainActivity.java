@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.silview.silfitness.azure.ToDoActivity;
 import com.silview.silfitness.bmob.acl.ACLActivity;
 import com.silview.silfitness.bmob.autoupdate.ActAutoUpdate;
 import com.silview.silfitness.bmob.crud.CRUDActivity;
@@ -117,6 +118,9 @@ public class MainActivity extends BaseActivity {
                 //表结构
 //				getAllTableSchema();
                 getTableSchema();
+                break;
+            case 17:
+                startActivity(new Intent(this, ToDoActivity.class));
                 break;
         }
     }
